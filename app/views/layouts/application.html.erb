@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ReactRaisExample</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class='content'>
+    <%= yield %>
+  </div>
+
+  <% unless params[:js].to_s == 'broken' %>
+    <%= javascript_include_tag 'application' %>
+  <% end %>
+</body>
+</html>
